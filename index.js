@@ -133,6 +133,19 @@ function findDuplicates(str) {
     return duplicates;
 }
 
-// Example
+
 let Duplicates = "programming";
 console.log(findDuplicates(Duplicates));
+
+// Convert to Title Case
+// Input: "java is awesome" → Output: "Java Is Awesome"
+function toTitleCase(str) {
+    return str
+        .split(" ")                    
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // capitalize first letter
+        .join(" ");                    
+}
+
+
+let Result = "java is awesome";
+console.log(toTitleCase(Result));
