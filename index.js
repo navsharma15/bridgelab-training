@@ -102,5 +102,17 @@ function countVowelsAndConsonants(str) {
     console.log("Vowels:", vCount, "Consonants:", cCount);
 }
 
-// Example
+
 countVowelsAndConsonants("Hello World");
+
+// Check for Anagram
+// Input: "listen", "silent" → Output: true
+function isAnagram(str1, str2) {
+    let s1 = str1.split("").sort().join("");
+    let s2 = str2.split("").sort().join("");
+
+    return s1 === s2;
+}
+
+
+console.log(isAnagram("listen", "silent"));
