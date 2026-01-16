@@ -116,3 +116,23 @@ function isAnagram(str1, str2) {
 
 
 console.log(isAnagram("listen", "silent"));
+
+// Find All Duplicates in a String
+// Input: "programming" → Output: 'r', 'g', 'm'
+function findDuplicates(str) {
+    let duplicates = [];
+
+    for (let i = 0; i < str.length; i++) {
+        if (str.indexOf(str[i]) !== str.lastIndexOf(str[i])) {
+            if (!duplicates.includes(str[i])) {
+                duplicates.push(str[i]);
+            }
+        }
+    }
+
+    return duplicates;
+}
+
+// Example
+let Duplicates = "programming";
+console.log(findDuplicates(Duplicates));
