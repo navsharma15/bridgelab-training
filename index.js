@@ -149,3 +149,46 @@ function toTitleCase(str) {
 
 let Result = "java is awesome";
 console.log(toTitleCase(Result));
+
+// Longest Substring Without Repeating Characters
+// Input: "abcabcbb" → Output: "abc" (Length: 3)
+function longestUniqueSubstring(str) {
+    let maxSub = "";
+    let maxLen = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        let temp = "";
+        let tempLen = 0;
+
+        for (let j = i; j < str.length; j++) {
+            let repeat = false;
+
+            
+            for (let k = 0; k < tempLen; k++) {
+                if (str[j] === temp[k]) {
+                    repeat = true;
+                    break;
+                }
+            }
+
+            if (repeat) {
+                break; 
+            } else {
+                temp += str[j]; 
+                tempLen++;
+            }
+        }
+
+        if (tempLen > maxLen) {
+            maxLen = tempLen;
+            maxSub = temp;
+        }
+    }
+
+    return { maxSub, maxLen };
+}
+
+
+let R = "abcabcbb";
+let r = longestUniqueSubstring(R);
+console.log("Longest Substring: '" + r.maxSub + "' (Length: " + r.maxLen + ")");
