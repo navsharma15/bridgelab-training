@@ -82,4 +82,25 @@ function removeChars(str1, str2) {
 
 console.log(removeChars("hello world", "ol"));
 
+// Count Vowels and Consonants
+// Input: "Hello World" → Output: Vowels: 3, Consonants: 7
+function countVowelsAndConsonants(str) {
+    let vowels = "aeiouAEIOU";
+    let vCount = 0;
+    let cCount = 0;
 
+    for (let ch of str) {
+        if (/[a-zA-Z]/.test(ch)) {   // check if it's a letter
+            if (vowels.includes(ch)) {
+                vCount++;
+            } else {
+                cCount++;
+            }
+        }
+    }
+
+    console.log("Vowels:", vCount, "Consonants:", cCount);
+}
+
+// Example
+countVowelsAndConsonants("Hello World");
