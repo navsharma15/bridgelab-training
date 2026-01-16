@@ -42,3 +42,25 @@ function runLengthEncode(str) {
 let input = "aaabbc";
 let output = runLengthEncode(input);
 console.log(output);
+
+// First Non-Repeating Character
+// Input: "swiss" → Output: 'w'
+function firstNonRepeatingChar(str) {
+    let freq = {};
+
+    // Count frequency
+    for (let ch of str) {
+        freq[ch] = (freq[ch] || 0) + 1;
+    }
+
+    // Find first character with frequency 1
+    for (let ch of str) {
+        if (freq[ch] === 1) {
+            return ch;
+        }
+    }
+
+    return null;
+}
+
+console.log(firstNonRepeatingChar("swiss"));
